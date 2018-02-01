@@ -1,7 +1,8 @@
-## deja vu from yesterday!
-
+library(tidyverse)
+library(here)
 ## create a data frame of your installed packages
-
+mypackages <- tibble::as.tibble(installed.packages()) %>%
+  select(Package, LibPath, Version, Priority, Built)
 ## keep the variables
 ##   * Package
 ##   * LibPath
@@ -13,6 +14,5 @@
 ## YES overwrite the file that is there now
 ## that came from me (Jenny)
 ## it an example of what yours should look like
+write_csv(here("data","installed-packages.csv"))
 
-## when this script works, stage & commit it and the csv file
-## PUSH!
