@@ -14,5 +14,5 @@ mypackages <- tibble::as.tibble(installed.packages()) %>%
 ## YES overwrite the file that is there now
 ## that came from me (Jenny)
 ## it an example of what yours should look like
-write_csv(here("data","installed-packages.csv"))
+write_csv(mypackages, here("data","installed-packages.csv"))
 
